@@ -1,6 +1,9 @@
 package hromadske.pages;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /*
  * Abstract class representation of a Page in the UI. Page object pattern
@@ -9,23 +12,13 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class Page {
 
-	protected WebDriver webDriver;
+    public Page() {
+        PageFactory.initElements(getWebDriver(), this);
+    }
 
-	/*
-	 * Constructor injecting the WebDriver interface
-	 * 
-	 * @param webDriver
-	 */
-	public Page(WebDriver webDriver) {
-		this.webDriver = webDriver;
-	}
-
-	public WebDriver getWebDriver() {
-		return webDriver;
-	}
-
-	public String getTitle() {
-		return webDriver.getTitle();
-	}
+    public void type(WebElement element, String text) {
+        element.clear();
+        element.sendKeys(text);
+    }
 
 }

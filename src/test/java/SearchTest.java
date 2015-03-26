@@ -1,7 +1,9 @@
+import com.codeborne.selenide.SelenideElement;
+import hromadske.pages.HomePage;
+import hromadske.pages.SearchPage;
 import org.testng.annotations.Test;
 
-
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.text;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,13 +12,22 @@ import static com.codeborne.selenide.Selenide.*;
  * Time: 5:13 PM
  */
 public class SearchTest extends TestBase {
+    final String CORRECT_SEARCH_REQUEST = "громадське";
 
     @Test
-    public void SearchShouldBeSuccessfullWithValidData() {
+    public void searchFromHomePageShouldBeSuccessfulTest() {
+        new HomePage().searchFor(CORRECT_SEARCH_REQUEST);
 
-        $("input[value='search']").click();
-        $("form.big-search-form div.area input").sendKeys("громадське");
-        $("#button-search").click();
+        SelenideElement searchResultsBlock = (SelenideElement) new SearchPage().searchResultsBlock;
+        searchResultsBlock.shouldHave(text(CORRECT_SEARCH_REQUEST));
+    }
 
+    @Test
+    public void searchFromSearchPageShouldBeSuccessfulTest() {
+        SearchPage searchPage = new SearchPage().open();
+        searchPage.searchFor(CORRECT_SEARCH_REQUEST);
+
+        SelenideElement searchResultsBlock = (SelenideElement) new SearchPage().searchResultsBlock;
+        searchResultsBlock.shouldHave(text(CORRECT_SEARCH_REQUEST));
     }
 }

@@ -1,10 +1,9 @@
 package hromadske.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+
+import static com.codeborne.selenide.Selenide.$;
 
 /*
  * Sample page
@@ -13,10 +12,19 @@ import org.openqa.selenium.support.How;
  */
 public class HomePage extends Page {
 
-	public HomePage(WebDriver webDriver) {
-		super(webDriver);
-	}
+    @FindBy(css = "#text-01")
+    WebElement smallSearchField;
+
+    public HomePage() {
+        super();
+    }
 
 
-
+    public SearchPage searchFor(String text) {
+        type(smallSearchField, text);
+        //Clicking search button.
+        $("input[value='search']").click();
+        //returning search page to make chain calls.
+        return new SearchPage();
+    }
 }
