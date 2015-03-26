@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bcc2097-ba64-4266-adbd-46f0c29987b8" name="Default" comment="" />
+    <list default="true" id="4bcc2097-ba64-4266-adbd-46f0c29987b8" name="Default" comment="added gitignore" />
+    <list id="95087690-6b42-41ad-87f4-c0d21216dee7" name="New changelist" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="hromadskeTV.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="hromadskeTV.iml" />
@@ -11,7 +14,7 @@
     <file path="/testng.xml" changelist="4bcc2097-ba64-4266-adbd-46f0c29987b8" time="1427382873719" ignored="false" />
     <file path="/TestBase.java" changelist="4bcc2097-ba64-4266-adbd-46f0c29987b8" time="1427385681121" ignored="false" />
     <file path="/fragment.java" changelist="4bcc2097-ba64-4266-adbd-46f0c29987b8" time="1427383500445" ignored="false" />
-    <file path="/Dummy.txt" changelist="4bcc2097-ba64-4266-adbd-46f0c29987b8" time="1427385800438" ignored="false" />
+    <file path="/Dummy.txt" changelist="4bcc2097-ba64-4266-adbd-46f0c29987b8" time="1427386612734" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,13 +113,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestBase.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="18" selection-start="726" selection-end="726" vertical-scroll-proportion="0.7718121">
+            <state line="23" column="18" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="121" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,6 +141,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -146,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/test/java/SearchTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/TestBase.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -520,6 +534,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4bcc2097-ba64-4266-adbd-46f0c29987b8" name="Default" comment="" />
+      <changelist id="95087690-6b42-41ad-87f4-c0d21216dee7" name="New changelist" comment="" />
       <created>1427381834043</created>
       <updated>1427381834043</updated>
     </task>
@@ -532,7 +547,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="828" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32909605" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -549,7 +564,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.670904" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.670904" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6581921" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -680,10 +695,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="726" selection-end="726" vertical-scroll-proportion="0.7718121">
+        <state line="23" column="18" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="121" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
