@@ -1,4 +1,3 @@
-import com.codeborne.selenide.SelenideElement;
 import hromadske.pages.HomePage;
 import hromadske.pages.SearchPage;
 import org.testng.annotations.Test;
@@ -18,8 +17,7 @@ public class SearchTest extends TestBase {
     public void searchFromHomePageShouldBeSuccessfulTest() {
         new HomePage().searchFor(CORRECT_SEARCH_REQUEST);
 
-        SelenideElement searchResultsBlock = (SelenideElement) new SearchPage().searchResultsBlock;
-        searchResultsBlock.shouldHave(text(CORRECT_SEARCH_REQUEST));
+        new SearchPage().getSearchResultsBlock().shouldHave(text(CORRECT_SEARCH_REQUEST));
     }
 
     @Test
@@ -27,7 +25,6 @@ public class SearchTest extends TestBase {
         SearchPage searchPage = new SearchPage().open();
         searchPage.searchFor(CORRECT_SEARCH_REQUEST);
 
-        SelenideElement searchResultsBlock = (SelenideElement) new SearchPage().searchResultsBlock;
-        searchResultsBlock.shouldHave(text(CORRECT_SEARCH_REQUEST));
+        new SearchPage().getSearchResultsBlock().shouldHave(text(CORRECT_SEARCH_REQUEST));
     }
 }

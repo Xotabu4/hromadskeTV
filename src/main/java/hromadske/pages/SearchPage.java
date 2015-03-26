@@ -1,6 +1,7 @@
 package hromadske.pages;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,7 +15,8 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class SearchPage extends Page {
     @FindBy(css = ".all-news-block")
-    public WebElement searchResultsBlock;
+    WebElement searchResultsBlock;
+
     @FindBy(css = "form.big-search-form div.area input")
     WebElement searchField;
 
@@ -29,10 +31,14 @@ public class SearchPage extends Page {
         return this;
     }
 
-    public WebElement searchFor(String text) {
+    public void searchFor(String text) {
         type(searchField, text);
         $("#button-search").click();
-        return searchField;
+    }
+
+    public SelenideElement getSearchResultsBlock() {
+        //wrapper to get selenide element
+        return (SelenideElement) searchResultsBlock;
     }
 
 }
