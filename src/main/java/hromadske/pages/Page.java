@@ -2,8 +2,6 @@ package hromadske.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
-
 /*
  * Abstract class representation of a Page in the UI. Page object pattern
  * 
@@ -12,7 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 public abstract class Page {
 
     protected static boolean containsText(SelenideElement elementToFindText, String textToFind) {
-        return elementToFindText.has(text(textToFind));
+        return elementToFindText.getText().toLowerCase().contains(textToFind.toLowerCase());
     }
 
     protected void type(SelenideElement element, String text) {
