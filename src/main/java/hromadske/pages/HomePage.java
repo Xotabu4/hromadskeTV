@@ -1,5 +1,7 @@
 package hromadske.pages;
 
+import com.codeborne.selenide.Selenide;
+
 import static com.codeborne.selenide.Selenide.$;
 
 /*
@@ -15,5 +17,10 @@ public class HomePage extends Page {
         $("input[value='search']").click();
         //returning search page to make chain calls.
         return new SearchPage();
+    }
+
+    public HomePage open() {
+        Selenide.open("/");
+        return this;
     }
 }

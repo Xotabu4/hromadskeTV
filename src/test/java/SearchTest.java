@@ -15,7 +15,7 @@ public class SearchTest extends TestBase {
 
     @Test
     public void searchFromHomePageShouldBeSuccessfulTest() {
-        new HomePage().searchFor(CORRECT_SEARCH_REQUEST);
+        new HomePage().open().searchFor(CORRECT_SEARCH_REQUEST);
 
         assertTrue(new SearchPage().searchResultsContains(CORRECT_SEARCH_REQUEST));
     }
