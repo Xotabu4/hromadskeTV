@@ -1,7 +1,6 @@
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import hromadske.pages.DonatePage;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.attribute;
@@ -10,7 +9,6 @@ import static org.testng.Assert.assertTrue;
 
 public class DonateTest extends TestBase {
 
-    DonatePage donatePage;
     private String EDRPOU = "38780085";
     private String accountNumber = "26005053139189";
     private String receiver = "ГО ГРОМАДСЬКЕ ТЕЛЕБАЧЕННЯ";
@@ -25,23 +23,19 @@ public class DonateTest extends TestBase {
                     "\n" +
                     "МФО банку: " + mfo + " ( Київське ГРУ ПАТ КВ “ПРИВАТБАНК”, м.Київ )\n" +
                     "\n" +
-                    "Призначення: " + reason + "\"Громадське телебачення\".";
-
-    @BeforeTest
-    public void beforeTest() {
-        donatePage = new DonatePage().open();
-    }
+                    "Призначення: " + reason + " \"Громадське телебачення\".";
 
     @Test
     public void bankInformationShouldBeCorrectTest() {
+        DonatePage donatePage = new DonatePage().open();
         assertTrue(donatePage.donateInformationContains(CORRECT_BANK_INFORMATION),
                 "Bank account information should be correct");
     }
 
     @Test
     public void moneyUaDonationMethodShouldHaveCorrectParameters() {
+        DonatePage donatePage = new DonatePage().open();
         donatePage.openMoneyUABlock();
-
 
         ElementsCollection hiddenInputsList = donatePage.getMoneyUAHiddenInputs();
         //Verifying number of hidden parameters that passed to MoneyUA with POST.

@@ -5,12 +5,16 @@
   <artifactId>hromadskeTV</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>LATEST</version>
+            <scope>test</scope>
 		</dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
