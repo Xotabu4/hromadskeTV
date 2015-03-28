@@ -13,11 +13,6 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class SearchPage extends Page {
 
-    public static boolean searchResultsContains(String textToFind) {
-        //wrapper to get selenide element
-        return containsText($(".all-news-block"), textToFind);
-    }
-
     public SearchPage open() {
         //to avoid recursive call, calling Selenide.open directly.
         Selenide.open("/search");
@@ -30,6 +25,11 @@ public class SearchPage extends Page {
         $("#button-search").click();
         //Waiting for ajax call to finish loading news.
         $(".all-news-list").waitUntil(visible, 5000);
+    }
+
+    public boolean searchResultsContains(String textToFind) {
+        //wrapper to get selenide element
+        return containsText($(".all-news-block"), textToFind);
     }
 
 }
