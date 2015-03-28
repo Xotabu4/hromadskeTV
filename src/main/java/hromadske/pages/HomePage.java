@@ -1,8 +1,5 @@
 package hromadske.pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
 import static com.codeborne.selenide.Selenide.$;
 
 /*
@@ -12,16 +9,8 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class HomePage extends Page {
 
-    @FindBy(css = "#text-01")
-    WebElement smallSearchField;
-
-    public HomePage() {
-        super();
-    }
-
-
     public SearchPage searchFor(String text) {
-        type(smallSearchField, text);
+        type($("#text-01"), text);
         //Clicking search button.
         $("input[value='search']").click();
         //returning search page to make chain calls.

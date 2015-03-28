@@ -1,10 +1,8 @@
 package hromadske.pages;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
@@ -14,14 +12,10 @@ import static com.codeborne.selenide.Selenide.$;
  * Or also you can access it with direct link http://www.hromadske.tv/search/
  */
 public class SearchPage extends Page {
-    @FindBy(css = ".all-news-block")
-    WebElement searchResultsBlock;
 
-    @FindBy(css = "form.big-search-form div.area input")
-    WebElement searchField;
-
-    public SearchPage() {
-        super();
+    public static boolean searchResultsContains(String textToFind) {
+        //wrapper to get selenide element
+        return containsText($(".all-news-block"), textToFind);
     }
 
     public SearchPage open() {
@@ -32,13 +26,10 @@ public class SearchPage extends Page {
     }
 
     public void searchFor(String text) {
-        type(searchField, text);
+        type($("form.big-search-form div.area input"), text);
         $("#button-search").click();
-    }
-
-    public SelenideElement getSearchResultsBlock() {
-        //wrapper to get selenide element
-        return (SelenideElement) searchResultsBlock;
+        //Waiting for ajax call to finish loading news.
+        $(".all-news-list").waitUntil(visible, 5000);
     }
 
 }

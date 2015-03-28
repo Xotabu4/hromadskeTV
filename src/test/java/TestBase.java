@@ -1,9 +1,11 @@
 import com.codeborne.selenide.Configuration;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.selenium.wrapper.LoggingWrapper;
 
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.*;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +22,14 @@ public class TestBase {
 
         Configuration.baseUrl="http://www.hromadske.tv";
         Configuration.dismissModalDialogs=true;
+        Configuration.holdBrowserOpen = true;
 
         open("/");
+    }
+
+    //Setting alwaysRun to kill browser regardless of test result.
+    @AfterSuite(alwaysRun = true)
+    public void afterSuite() {
+        getWebDriver().close();
     }
 }

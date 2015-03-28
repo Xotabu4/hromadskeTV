@@ -2,7 +2,8 @@ import hromadske.pages.HomePage;
 import hromadske.pages.SearchPage;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Condition.text;
+import static hromadske.pages.SearchPage.searchResultsContains;
+import static org.testng.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +18,7 @@ public class SearchTest extends TestBase {
     public void searchFromHomePageShouldBeSuccessfulTest() {
         new HomePage().searchFor(CORRECT_SEARCH_REQUEST);
 
-        new SearchPage().getSearchResultsBlock().shouldHave(text(CORRECT_SEARCH_REQUEST));
+        assertTrue(searchResultsContains(CORRECT_SEARCH_REQUEST));
     }
 
     @Test
@@ -25,6 +26,6 @@ public class SearchTest extends TestBase {
         SearchPage searchPage = new SearchPage().open();
         searchPage.searchFor(CORRECT_SEARCH_REQUEST);
 
-        new SearchPage().getSearchResultsBlock().shouldHave(text(CORRECT_SEARCH_REQUEST));
+        assertTrue(searchResultsContains(CORRECT_SEARCH_REQUEST));
     }
 }
