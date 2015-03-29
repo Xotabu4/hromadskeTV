@@ -33,7 +33,7 @@ public class DonateTest extends TestBase {
     }
 
     @Test
-    public void moneyUaDonationMethodShouldHaveCorrectParameters() {
+    public void moneyUaDonationMethodShouldHaveCorrectParametersTest() {
         DonatePage donatePage = new DonatePage().open();
         donatePage.openMoneyUABlock();
 
